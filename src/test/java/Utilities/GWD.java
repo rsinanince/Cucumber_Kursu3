@@ -18,6 +18,7 @@ public class GWD {
         if (driver == null) {              //her çağırıldığında yeni driver oluşturmasın diye, ilk çağırıldıktan sonra aynı driver çağırılsın diye bunu yazdık
 
             Logger.getLogger("").setLevel(Level.SEVERE);
+            System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
 
             WebDriverManager.chromedriver().setup();
@@ -34,11 +35,11 @@ public class GWD {
 
     public static void quitDriver()
     {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
         if (driver !=null) {  //driver varsa quit yap
             driver.quit();
