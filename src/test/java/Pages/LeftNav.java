@@ -7,33 +7,33 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LeftNav extends Parent{
 
-    public LeftNav() {
-        PageFactory.initElements(GWD.getDriver(), this);
-    }
+    public LeftNav() { PageFactory.initElements(GWD.getDriver(), this); }
 
     @FindBy(xpath="(//span[text()='Setup'])[1]")
     private WebElement setupOne;
 
-    @FindBy(xpath="//span[text()='Parameters')]")
+    @FindBy(xpath="//span[text()='Parameters']")
     private WebElement parameters;
 
-    @FindBy(xpath="//span[text()='Countries')]")
+    @FindBy(xpath="//span[text()='Countries']")
     private WebElement countries;
 
-    WebElement myElement;
+    @FindBy(xpath = "//span[text()='Citizenships']")
+    private WebElement citizenship;
 
+    @FindBy(xpath = "//span[text()='Nationalities']")
+    private WebElement nationalities;
+
+    WebElement myElement;
     public void findAndClick(String strElement) {
 
-        switch (strElement) {
-            case "setupOne":
-                myElement = setupOne;
-                break;
-            case "parameters":
-                myElement = parameters;
-                break;
-            case "countries":
-                myElement = countries;
-                break;
+        switch (strElement)
+        {
+            case "setupOne": myElement = setupOne; break;
+            case "parameters": myElement = parameters; break;
+            case "countries": myElement = countries; break;
+            case "citizenship": myElement = citizenship; break;
+            case "nationalities" : myElement =nationalities; break;
         }
 
         clickFunction(myElement);

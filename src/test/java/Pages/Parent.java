@@ -1,11 +1,11 @@
 package Pages;
 
 import Utilities.GWD;
+import junit.framework.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -41,7 +41,7 @@ public class Parent {
 
     public void waitUntilClickable(WebElement element){
         WebDriverWait wait =new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void verifyContainsText(WebElement element, String text)
