@@ -1,5 +1,6 @@
 package StepDefinitions;
 import Pages.DialogueContent;
+import Pages.FormContent;
 import Pages.LeftNav;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -10,6 +11,7 @@ public class _05_DatatableSteps {
 
     LeftNav ln=new LeftNav();
     DialogueContent dc=new DialogueContent();
+    FormContent fc=new FormContent();
 
     @And("Click on the element in the left Nav")
     public void clickOnTheElementInTheLeftNav(DataTable elements) {
@@ -50,6 +52,15 @@ public class _05_DatatableSteps {
         for (int i=0; i<listElement.size(); i++) {
             //   System.out.println("listElement = " + listElement.get(i));
             dc.searchAndDelete(listElement.get(i));
+        }
+    }
+
+    @And("Click on the element in the Form Content")
+    public void clickOnTheElementInTheFormContent(DataTable elements) {
+        List<String> listElement = elements.asList(String.class);
+
+        for (int i=0; i<listElement.size(); i++) {
+            fc.findAndClick(listElement.get(i));
         }
     }
 }

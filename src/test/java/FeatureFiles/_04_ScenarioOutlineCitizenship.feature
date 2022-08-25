@@ -19,9 +19,9 @@ Feature: Citizenship with scenario outline
 
       Examples:
       | CitizenshipName | ShortName |
-      | Citizen24       | citi24    |
-      | Citizen25       | citi25    |
-      | Citizen26       | citi26    |
+      | Citizennn766       | citizz52    |
+      | Citizennn776       | citizz53    |
+      | Citizennn786       | citizz54    |
 
 
 
