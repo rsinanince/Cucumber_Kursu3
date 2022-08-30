@@ -36,6 +36,6 @@ Feature: Fee Functionality
 
     Examples:
       | name       | code    | intCode      | priority |
-      | sinanFee04 | 01452   | spotify      | 121      |
-      | sinanFee05 | 01563   | netflix      | 122      |
-      | sinanFee06 | 02457   | amazonprime  | 133      |
+      | sinanFee07 | 01453   | spotify      | 124      |
+      | sinanFee08 | 01564   | netflix      | 125      |
+      | sinanFee09 | 02458   | amazonprime  | 136      |
