@@ -1,0 +1,11 @@
+Soru : Bir excel de aşağıdaki bilgiler vardır
+Bu bilgilerin yerleşeceği tabloyu kendi DB nizde MySQL arayüzünde oluşturup,
+JDBC üzerinden bilgileri okuyarak tabloya aktarınız.
+(JDBC Mysql insert komutunun nasıl çalıştırılacağı internetten araştırılacak)
+
+
+no      ad      soyad       telefon
+1       sinan   ince        0505555555
+2       ali     kaya        0545566633
+3       ayşe    çetin       0546222233
+4       mehmet  yıldız      0564488899

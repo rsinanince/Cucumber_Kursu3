@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class DialogueContent extends Parent{
 
@@ -73,6 +74,9 @@ public class DialogueContent extends Parent{
     @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement acceptCookies;
 
+    @FindBy(xpath = "//tbody/tr/td[2]")
+    public List<WebElement> nameList;
+
     WebElement myElement;
     public void findAndSend(String strElement, String value){
 
@@ -121,13 +125,17 @@ public class DialogueContent extends Parent{
     }
 
     public void searchAndDelete(String searchText) {
+
+        //scrollUp()
         findAndSend("searchInput", searchText);
         findAndClick("searchButton");
 
 //        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.stalenessOf(deleteButton));
 
-        waitUntilLoading();
+//        waitUntilLoading();
+        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"),"Search"));
 
         //    GWD.Bekle(2);  //TODO: incelenecek
         findAndClick("deleteButton");         //silme butonuna tıkla
